@@ -13,4 +13,9 @@ RUN wget http://cab.spbu.ru/files/release3.14.0/SPAdes-3.14.0-Linux.tar.gz && \
 
 ENV PATH="${PATH}:/usr/src/SPAdes-3.14.0-Linux/bin"
 
+#add user (not really necessary)
+RUN adduser --disabled-password --gecos '' spades
+USER spades
+
+WORKDIR /home/spades
 
